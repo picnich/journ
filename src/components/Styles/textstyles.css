@@ -3,23 +3,43 @@
     src: url('../../fonts/Canela/Canela-Light.woff2') format('woff2'),
             url('../../fonts/Canela/Canela-Light.woff') format('woff'),
             url('../../fonts/Canela/Canela-Light.ttf') format('truetype');
+    font-display:auto;
+    font-style:normal;
+    font-weight:100;
 }
 
 @font-face {
     font-family: 'Avenir-Medium';
     src: url('../../fonts/Avenir/AvenirLTStd-Medium.woff2') format('woff2'),
-            url('../../fonts/Avenir/AvenirLTStd-Medium.woff') format('woff'),
-            url('../../fonts/Avenir/AvenirLTStd-Medium.ttf') format('truetype');
+    url('../../fonts/Avenir/AvenirLTStd-Medium.woff') format('woff'),
+    url('../../fonts/Avenir/AvenirLTStd-Medium.ttf') format('truetype');
+    font-display:auto;
+    font-style:normal;
 }
 @font-face {
     font-family: 'Avenir-Bold';
     src: url('../../fonts/Avenir/AvenirNextLTPro-Bold.woff2') format('woff2'),
-            url('../../fonts/Avenir/AvenirNextLTPro-Bold.woff') format('woff'),
-            url('../../fonts/Avenir/AvenirNextLTPro-Bold.ttf') format('truetype');
+    url('../../fonts/Avenir/AvenirNextLTPro-Bold.woff') format('woff'),
+    url('../../fonts/Avenir/AvenirNextLTPro-Bold.ttf') format('truetype');
+    font-display:auto;
+    font-style:normal;
 }
 @font-face {
     font-family: 'Avenir-Regular';
     src: url('../../fonts/Avenir/AvenirNextLTPro-Regular.woff2') format('woff2'),
-            url('../../fonts/Avenir/AvenirNextLTPro-Regular.woff') format('woff'),
-            url('../../fonts/Avenir/AvenirNextLTPro-Regular.ttf') format('truetype');
+    url('../../fonts/Avenir/AvenirNextLTPro-Regular.woff') format('woff'),
+    url('../../fonts/Avenir/AvenirNextLTPro-Regular.ttf') format('truetype');
+    font-display:auto;
+    font-style:normal;
 }
+
+body {
+    font-family: 'Avenir-Regular', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Canela-Light', sans-serif;
+    color: var(--c-title);
+    font-weight: normal;
+  }
+  
