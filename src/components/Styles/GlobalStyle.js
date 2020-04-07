@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 // import "typeface-heebo"
 
-import "./textStyles.css"
+// import "./textStyles.css"
 
 const GlobalStyle = createGlobalStyle`
 :root {
