@@ -1,9 +1,60 @@
 import { createGlobalStyle } from "styled-components"
-// import "typeface-heebo"
 
 // import "./textStyles.css"
+import CanelaWOFF2 from "../../fonts/Canela/Canela-Light.woff2"
+import CanelaWOFF from "../../fonts/Canela/Canela-Light.woff"
+import CanelaTTF from "../../fonts/Canela/Canela-Light.ttf"
+
+import AvenirMedWOFF2 from '../../fonts/Avenir/AvenirLTStd-Medium.woff2'
+import AvenirMedWOFF from '../../fonts/Avenir/AvenirLTStd-Medium.woff'
+import AvenirMedTTF from '../../fonts/Avenir/AvenirLTStd-Medium.ttf'
+
+import AvenirBoldWOFF2 from '../../fonts/Avenir/AvenirNextLTPro-Bold.woff2'
+import AvenirBoldWOFF from '../../fonts/Avenir/AvenirNextLTPro-Bold.woff'
+import AvenirBoldTTF from '../../fonts/Avenir/AvenirNextLTPro-Bold.ttf'
+
+import AvenirRegWOFF2 from '../../fonts/Avenir/AvenirNextLTPro-Regular.woff2'
+import AvenirRegWOFF from '../../fonts/Avenir/AvenirNextLTPro-Regular.woff'
+import AvenirRegTTF from '../../fonts/Avenir/AvenirNextLTPro-Regular.ttf'
 
 const GlobalStyle = createGlobalStyle`
+@font-face {
+    font-family: 'Canela-Light';
+    src: url(${CanelaWOFF2}) format('woff2'),
+            url(${CanelaWOFF}) format('woff'),
+            url(${CanelaTTF}) format('truetype');
+    font-display:auto;
+    font-style:normal;
+    font-weight:100;
+}
+@font-face {
+    font-family: 'Avenir-Medium';
+    src: url(${AvenirMedWOFF2}) format('woff2'),
+            url(${AvenirMedWOFF}) format('woff'),
+            url(${AvenirMedTTF}) format('truetype');
+    font-display:auto;
+    font-style:normal;
+    font-weight:100;
+}
+@font-face {
+    font-family: 'Avenir-Bold';
+    src: url(${AvenirBoldWOFF2}) format('woff2'),
+            url(${AvenirBoldWOFF}) format('woff'),
+            url(${AvenirBoldTTF}) format('truetype');
+    font-display:auto;
+    font-style:normal;
+    font-weight:100;
+}
+@font-face {
+    font-family: 'Avenir-Regular';
+    src: url(${AvenirRegWOFF2}) format('woff2'),
+            url(${AvenirRegWOFF}) format('woff'),
+            url(${AvenirRegTTF}) format('truetype');
+    font-display:auto;
+    font-style:normal;
+    font-weight:100;
+}
+
 :root {
   ${'' /* Colours */}
   --background: #1d1d1d;
