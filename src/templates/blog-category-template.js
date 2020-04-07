@@ -16,13 +16,17 @@ import SEO from "../components/SEO"
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 24px;
+  padding-bottom: 48px;
+  
+  @media (min-width: 768px) {
+    padding-top: 100px;
+  }
 `
 
 const FlexItem = styled.div`
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 
   &:last-child {
     margin-bottom: 0;

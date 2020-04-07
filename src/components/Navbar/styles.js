@@ -50,6 +50,7 @@ export const NavLogo = styled.div`
   z-index: 2;
   margin-bottom: ${ props => props.isBlogPost ? "0px" : "70px"};
   margin-top: 16px;
+  position: relative;
 
   @media (min-width: 768px) {
     font-size: ${props => props.isBlogPost ? "32px" : "100px"};
@@ -79,6 +80,11 @@ export const NavLogo = styled.div`
     left: 50%;
     left: ${ props => props.isBlogPost ? "0%" : "50%"};
     transform: ${ props => props.isBlogPost ? "translate(0%, 48px)" : "translate(-50%, 60px)"};
+    display: inline-flex;
+    top: auto;
+    @media screen and (min-width: 768px) {
+      bottom: 60px;
+    }
 
 
     img {
@@ -94,7 +100,7 @@ export const NavLogo = styled.div`
     top: 0;
     left: 50%;
     left: 0%;
-    transform: translate(5px,54px);
+    transform: translate(5px,44px);
 
     @media (min-width: 768px) {
       display: inline-block;
@@ -213,12 +219,12 @@ export const NavLinksPost = styled.div`
     font-size: var(--menuItem);
 
     @media (min-width: 768px) {
-      margin-right: 15px;
+      margin-right: 24px;
 
     }
 
     @media (min-width: 1200px) {
-      margin-right: 25px;
+      margin-right: 30px;
     }
   }
 
@@ -238,10 +244,12 @@ export const NavLinksPost = styled.div`
       color: var(--c-lightgrey);
     }
   }
-  li.link-shop { 
+  li.link-shop a { 
     display: flex; 
     align-items: center;
     margin-left: 8px;
+    color: var(--c-journpeach) !important;
+    font-weight: bold;
       
   }
 
@@ -249,12 +257,6 @@ export const NavLinksPost = styled.div`
       max-width: 24px;
       margin-right:7px;
   }
-
-  li.link-shop a {
-      color: #e9805d !important;
-      font-weight: bold;
-  }
-
   @media (hover: hover) {
     a:hover {
       color: var(--c-lightgrey);
@@ -312,11 +314,12 @@ export const NavLinks = styled.div`
       color: var(--c-lightgrey);
     }
   }
-  li.link-shop { 
+  li.link-shop a { 
       display: flex; 
       align-items: center;
       margin-left: 8px;
-      
+      color: var(--c-journpeach) !important;
+      font-weight: bold;
   }
 
   li.link-shop svg {
@@ -324,10 +327,6 @@ export const NavLinks = styled.div`
       margin-right:7px;
   }
 
-  li.link-shop a {
-      color: #e9805d !important;
-      font-weight: bold;
-  }
 
   @media (hover: hover) {
     a:hover {

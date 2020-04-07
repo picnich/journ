@@ -4,21 +4,15 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import BlogFeaturedCard from "./BlogFeaturedCard"
 
-// const Section = styled.section`
-//   grid-column: 1 / 4;
-//   margin-left: -20px;
-//   margin-right: -20px;
-// `
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   /* padding: var(--paddingStd) var(--paddingBorder); */
   padding-top: 24px;
-  padding-bottom: 24px;
+  padding-bottom: 48px;
   
   @media (min-width: 768px) {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 100px;
   }
 
 
@@ -26,7 +20,7 @@ const FlexContainer = styled.div`
 
 const FlexItem = styled.div`
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   
   &:last-child {
     margin-bottom: 0;

@@ -96,8 +96,8 @@ const Navbar = () => {
                 )
               })}
               <li className="link-shop">
-                <IconCart />
                 <a href="https://ourjourn.com" rel="Link to Journ Shop" target="__blank">
+                  <IconCart />
                   Shop
                 </a>
               </li>

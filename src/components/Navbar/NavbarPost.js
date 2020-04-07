@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { useStaticQuery, graphql } from "gatsby"
 // import styled from "styled-components"
@@ -21,6 +21,13 @@ const NavbarPost = () => {
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
   }
+
+  useEffect(() => {
+		document.body.style.margin = isOpen ? 0 : 'auto';
+		document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+		document.body.style.height = isOpen ? '100%' : 'auto';
+		document.body.style.touchAction = 'manipulation';
+	}, [isOpen])
 
   const {
     site: { siteMetadata },
@@ -88,8 +95,8 @@ const NavbarPost = () => {
                 )
               })}
               <li className="link-shop">
-                <IconCart />
                 <a href="https://ourjourn.com" rel="Link to Journ Shop" target="__blank">
+                  <IconCart />
                   Shop
                 </a>
               </li>            </ul>
