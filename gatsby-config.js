@@ -9,7 +9,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "The Journal",
-    description: "A blog for the lifestyle brand Journ.",
+    description: "A blog for the beauty brand Journ.",
     author: "Catalog",
     twitterUsername: "@trycatalog",
     image: "/yellow-metal-design-decoration.jpg",

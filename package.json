@@ -1,7 +1,7 @@
 {
   "name": "the-journal",
   "private": true,
-  "description": "A blog for the lifestyle brand Journ.",
+  "description": "A blog for the beauty brand Journ.",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
