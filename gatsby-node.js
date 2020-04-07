@@ -31,7 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // console.log(node.name)
     createPage({
       path: `${node.slug}`,
-      component: path.resolve("src/templates/blog-category-template.js"),
+      component: path.resolve("./src/templates/blog-category-template.js"),
       context: {
         category: node.slug
       }
@@ -42,7 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // console.log(node.slug)
     createPage({
       path: `${node.category.slug}/${node.slug}`,
-      component: path.resolve("src/templates/blog-template.js"),
+      component: path.resolve("./src/templates/blog-template.js"),
       context: {
         slug: node.slug,
       },
