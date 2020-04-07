@@ -3,8 +3,8 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { useStaticQuery, graphql } from "gatsby"
 // import styled from "styled-components"
 // import Image from "gatsby-image"
-import IconMenu from "../../../src/images/navigation-menu.svg"
-import IconCart from "../../../src/images/icon-cart.svg"
+import IconMenu from "../../images/navigation-menu.svg"
+import IconCart from "../../images/icon-cart.svg"
 
 import {
   NavBar, 

@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // import quickNav from "../../constants/quickNav"
 // import styled from "styled-components"
 // import DarkMode from "../DarkMode/DarkMode"
-import IconCart from "../../../src/images/icon-cart.svg"
+import IconCart from "../../images/icon-cart.svg"
 import {
   NavBar, 
   // NavButton, 
