@@ -87,7 +87,7 @@ const options = {
   },
 }
 const BlogFeaturedCard = ({ blog }) => {
-  const { slug, title, bannerImage, published, richText, category } = blog
+  const { slug, title, bannerImage, richText, category } = blog
   
   const excerpt = richText.json.content[0]
   return (

@@ -129,7 +129,7 @@ const LogoContainer = styled.div`
 
 const Footer = () => {
   const {
-    site: { siteMetadata },
+    // site: { siteMetadata },
     logoSVG
   } = useStaticQuery(graphql`
     {
@@ -164,7 +164,7 @@ const Footer = () => {
             </ul> */}
              <LogoContainer>
                 <AniLink cover bg="var(--c-title)" to={"/"}>
-                  <img src={logoSVG.publicURL} rel="Journ Logo" />
+                  <img src={logoSVG.publicURL} alt="Journ Logo" />
                 </AniLink>
               </LogoContainer>
           </FooterMenu>

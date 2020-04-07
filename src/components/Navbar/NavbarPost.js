@@ -58,7 +58,7 @@ const NavbarPost = () => {
               {siteMetadata.title}
             </AniLink>
             <a className="byJournPost" href={`https://ourjourn.com`}>
-                <img src={logoSVG.publicURL} rel="Journ Logo" />
+                <img src={logoSVG.publicURL} alt="Journ Logo" />
             </a>
           </NavLogo>
           {/* <ThemeSwitch></ThemeSwitch> */}

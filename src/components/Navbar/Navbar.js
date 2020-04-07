@@ -62,7 +62,7 @@ const Navbar = () => {
               {siteMetadata.title}
             </AniLink>
             <a className="byJourn" href={`https://ourjourn.com`}>
-              <img src={logoSVG.publicURL} rel="Journ Logo" />
+              <img src={logoSVG.publicURL} alt="Journ Logo" />
             </a>
           </NavLogo>
         </NavCenter>
