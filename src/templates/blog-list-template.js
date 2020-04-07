@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
 import Grid from "../components/Grid/Grid"
-import PageIntro from "../components/PageIntro/PageIntro"
+// import PageIntro from "../components/PageIntro/PageIntro"
 import BlogCard from "../components/Blog/BlogCard"
 import SEO from "../components/SEO"
 
