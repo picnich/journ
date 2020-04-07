@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { useStaticQuery, graphql } from "gatsby"
 // import Image from "gatsby-image"
@@ -21,10 +21,10 @@ import {
 
 
 const Navbar = () => {
-  const [isOpen, setNav] = useState(false)
-  const toggleNav = () => {
-    setNav(isOpen => !isOpen)
-  }
+  // const [isOpen, setNav] = useState(false)
+  // const toggleNav = () => {
+  //   setNav(isOpen => !isOpen)
+  // }
 
   const {
     site: { siteMetadata },
