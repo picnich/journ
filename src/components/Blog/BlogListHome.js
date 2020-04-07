@@ -14,8 +14,6 @@ const FlexContainer = styled.div`
   @media (min-width: 768px) {
     padding-top: 100px;
   }
-
-
 `
 
 const FlexItem = styled.div`
@@ -63,7 +61,6 @@ const BlogListHome = () => {
   return (
     <>
       <BlogFeaturedCard blog={latestPost.node} />
-
       <FlexContainer>
         {allPosts.map(({ node }) => {
           return (

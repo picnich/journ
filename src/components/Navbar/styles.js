@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 
 export const NavBar = styled.nav`
-  padding: 0 1.875rem;
+  padding: 0 20px;
   width: 100%;
 `
 
@@ -221,6 +221,10 @@ export const NavLinksPost = styled.div`
     @media (min-width: 768px) {
       margin-right: 24px;
 
+      &:last-child {
+        margin-right: 0;
+      }
+
     }
 
     @media (min-width: 1200px) {
@@ -236,7 +240,7 @@ export const NavLinksPost = styled.div`
     transition: var(--transition) color;
 
     &.active {
-        font-weight: bold;
+        font-weight: 900;
         color: var(--c-title);
     }
 
@@ -306,7 +310,7 @@ export const NavLinks = styled.div`
     transition: var(--transition) color;
 
     &.active {
-        font-weight: bold;
+        font-weight: 900;
         color: var(--c-title);
     }
 

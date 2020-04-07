@@ -10,8 +10,8 @@ import IconTw from "../images/icon-twitter.svg"
 import IconIg from "../images/icon-instagram.svg"
 
 const FooterArea = styled.footer`
-  padding-left: 1.875rem;
-  padding-right: 1.875rem;
+  padding-left: 20px;
+  padding-right: 20px;
   background: var(--c-darkgreen);
 `
 

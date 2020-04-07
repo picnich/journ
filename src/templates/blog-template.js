@@ -40,8 +40,8 @@ const GridPost = styled.div`
 `
 
 const FeaturedImage = styled.div`
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
