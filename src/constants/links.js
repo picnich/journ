@@ -1,8 +1,8 @@
 export default [
-  {
-    path: "/products",
-    text: "products",
-  },
+  // {
+  //   path: "/products",
+  //   text: "products",
+  // },
   // {
   //   path: "/blog",
   //   text: "blog",

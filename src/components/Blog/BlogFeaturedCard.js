@@ -6,31 +6,57 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 import Category from "../Category"
 
-const BlogItem = styled.article`
-  width: 100%;
-  padding: 0 20px;
-`
 
+const GridContainer = styled.div`
+  margin-top: 50px;
+  display: grid;
+  /* grid-gap: 30px; */
+  grid-template-columns: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* @media (min-width: 1200px) {
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 40px;
+  } */
+`
+const HeroImage = styled.div`
+  width: 100%;
+  /* background-color: var(--primary); */
+  border: none;
+  outline: none;
+
+  .gatsby-image-wrapper {
+    object-fit: cover;
+    height: 100%;
+  }
+
+`
 const BlogItemContent = styled.div`
-  margin-top: 38px;
-  /* background-color: #272727;
-  border-top: 3px solid var(--primary);
-  padding: 2.5rem 1.25rem; */
+  background-color: var(--c-lightrose);
+  padding: 24px 28px;
 
   &:last-child {
     margin-bottom: 0;
   }
 
   @media (min-width: 768px) {
+    padding: 58px 68px;
     margin-bottom: 0;
   }
 
   h2 {
     margin-top: 0;
     margin-bottom: 20px;
-    color: var(--c-title);
+    @media screen and (min-width: 768px) {
+      font-size: 52px;
+    }
   }
-  
+
   p {
     /* margin-bottom: 40px; */
     color: var(--c-text);
@@ -40,19 +66,12 @@ const BlogItemContent = styled.div`
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     margin: 0;
-    @media (min-width: 768px) {
-      font-size: 17px;
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
     }
-  }
-`
-const ImgContainer = styled.div`
-  object-fit: cover;
-
-  .banner-image {
-    max-height: 320px;
   }
 `
 const options = {
@@ -67,30 +86,30 @@ const options = {
     }
   },
 }
-const BlogCard = ({ blog }) => {
+const BlogFeaturedCard = ({ blog }) => {
   const { slug, title, bannerImage, published, richText, category } = blog
   
   const excerpt = richText.json.content[0]
   return (
-    <BlogItem>
-      <AniLink
-        className="btn"
-        cover
-        bg="var(--background)"
-        to={`/${category.slug}/${slug}`}
-      >
-        <ImgContainer>
-          <Image className="banner-image" fluid={bannerImage.fluid} alt="Banner Image" />
-        </ImgContainer>
+    <AniLink
+      className="btn"
+      cover
+      bg="var(--background)"
+      to={`/${category.slug}/${slug}`}
+    >
+    <GridContainer>
+        <HeroImage>
+          <Image fluid={bannerImage.fluid} alt="Banner Image"  />
+        </HeroImage>
         <BlogItemContent>
           <Category category={category} />
           <h2>{title}</h2>
           <p>{documentToReactComponents(excerpt, options)}</p>
           {/* <button className="btn">Read Post</button> */}
         </BlogItemContent>
-      </AniLink>
-    </BlogItem>
+    </GridContainer>
+    </AniLink>
   )
 }
 
-export default BlogCard
+export default BlogFeaturedCard

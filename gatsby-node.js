@@ -5,16 +5,21 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
     query {
-      products: allContentfulProducts {
+      posts: allContentfulBlogPost {
         edges {
           node {
             slug
+            category {
+              slug
+              name
+            }
           }
         }
       }
-      posts: allContentfulPosts {
+      categories: allContentfulBlogCategory {
         edges {
           node {
+            name
             slug
           }
         }
@@ -22,24 +27,29 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  data.products.edges.forEach(({ node }) => {
+  data.categories.edges.forEach( ({ node }) => {
+    // console.log(node.name)
     createPage({
-      path: `products/${node.slug}`,
-      component: path.resolve("src/templates/product-template.js"),
+      path: `${node.slug}`,
+      component: path.resolve("src/templates/blog-category-template.js"),
       context: {
-        slug: node.slug,
-      },
+        category: node.slug
+      }
     })
   })
+
   data.posts.edges.forEach(({ node }) => {
+    // console.log(node.slug)
     createPage({
-      path: `blogs/${node.slug}`,
+      path: `${node.category.slug}/${node.slug}`,
       component: path.resolve("src/templates/blog-template.js"),
       context: {
         slug: node.slug,
       },
     })
   })
+
+  
   //Amount of posts
   const posts = data.posts.edges
   // Posts per page
@@ -47,16 +57,16 @@ exports.createPages = async ({ graphql, actions }) => {
   // How many pages
   const numPages = Math.ceil(posts.length / postsPerPage)
 
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blogs` : `/blogs/${i + 1}`,
-      component: path.resolve("./src/templates/blog-list-template.js"),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
-  })
+  // Array.from({ length: numPages }).forEach((_, i) => {
+  //   createPage({
+  //     path: i === 0 ? `/blogs` : `/blogs/${i + 1}`,
+  //     component: path.resolve("./src/templates/blog-list-template.js"),
+  //     context: {
+  //       limit: postsPerPage,
+  //       skip: i * postsPerPage,
+  //       numPages,
+  //       currentPage: i + 1,
+  //     },
+  //   })
+  // })
 }

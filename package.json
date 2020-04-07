@@ -1,7 +1,7 @@
 {
-  "name": "barcadia",
+  "name": "the-journal",
   "private": true,
-  "description": "A super-fast site using GatsbyJS",
+  "description": "A blog for the lifestyle brand Journ.",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -20,8 +20,8 @@
     "gatsby": "^2.19.7",
     "gatsby-background-image": "^0.10.1",
     "gatsby-image": "^2.2.41",
-    "gatsby-plugin-playground": "^1.0.6",
     "gatsby-plugin-react-helmet": "^3.1.23",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.28",

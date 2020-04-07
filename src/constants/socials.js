@@ -1,10 +1,14 @@
 export default [
   {
-    title: "LinkedIn",
-    url: "https://www.linkedin.com/in/morgan-baker-developer-inverness/",
+    title: "Facebook",
+    url: "https://www.facebook.com/journbeauty",
   },
   {
-    title: "GitHub",
-    url: "https://github.com/bagseye",
+    title: "Twitter",
+    url: "https://twitter.com/journbeauty/",
+  },
+  {
+    title: "Instagram",
+    url: "https://www.instagram.com/journbeauty/",
   },
 ]

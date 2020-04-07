@@ -8,17 +8,26 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: "Barcadia",
-    description: "A super-fast site using GatsbyJS",
-    author: "Morgan Baker",
-    twitterUsername: "@dave",
+    title: "The Journal",
+    description: "A blog for the lifestyle brand Journ.",
+    author: "Catalog",
+    twitterUsername: "@trycatalog",
     image: "/yellow-metal-design-decoration.jpg",
-    siteUrl: "https://barcadia.netlify.com",
+    siteUrl: "https://ourjourn.com",
   },
   /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-react-svg`,
+    // {
+    //   resolve: "gatsby-plugin-react-svg",
+    //   options: {
+    //     rule: {
+    //       include: /images/ // See below to configure properly
+    //     }
+    //   }
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -42,7 +51,6 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
-    `gatsby-plugin-playground`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,

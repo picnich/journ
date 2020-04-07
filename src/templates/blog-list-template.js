@@ -70,11 +70,11 @@ const Blog = props => {
       <SEO title="Blogs" />
       <section className="section-padding">
         <Grid>
-          <PageIntro
+          {/* <PageIntro
             title="Blog"
             subTitle="A simple blog system that will allow you to update your followers with recent news"
             paragraph="Aliquam tempus libero nec quam aliquam fringilla. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In quis ipsum magna."
-          />
+          /> */}
           <Section>
             <FlexContainer>
               {data.post.edges.map(({ node }) => {
@@ -130,21 +130,22 @@ const Blog = props => {
 
 export const query = graphql`
   query getPosts($skip: Int!, $limit: Int!) {
-    post: allContentfulPosts(
+    post: allContentfulBlogPost(
       skip: $skip
       limit: $limit
-      sort: { fields: published, order: DESC }
+      sort: { fields: createdAt, order: DESC }
     ) {
       edges {
         node {
           slug
           title
-          postId: contentful_id
-          published(formatString: "MMMM Do, YYYY")
-          images {
-            fluid {
+          bannerImage {
+            fluid(maxWidth: 1800, quality: 100) {
               ...GatsbyContentfulFluid
             }
+          }
+          richText {
+            json
           }
         }
       }
@@ -152,3 +153,12 @@ export const query = graphql`
   }
 `
 export default Blog
+
+
+// postId: contentful_id
+// published(formatString: "MMMM Do, YYYY")
+// images {
+//   fluid {
+//     ...GatsbyContentfulFluid
+//   }
+// }
