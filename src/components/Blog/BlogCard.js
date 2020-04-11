@@ -43,6 +43,7 @@ const BlogItemContent = styled.div`
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     margin: 0;
+    text-transform: none;
     @media (min-width: 768px) {
       font-size: 17px;
     }

@@ -74,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
   --transition: 0.3s;
   --h1: 2rem;
   --h2: 1.875rem;
-  --paddingBorder: 1.875rem;
+  --paddingBorder: 20px;
   --paddingStd: 3.125rem;
   --paddingLarge: 4.688rem;
 

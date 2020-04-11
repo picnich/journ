@@ -10,21 +10,18 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 import Author from "../components/Author"
 import Category from "../components/Category"
+import { useInView } from 'react-intersection-observer'
+import NavbarPost from "../components/Navbar/NavbarPost"
+import { StickyNav } from "../components/Navbar/styles"
+
+// import StickyNav from "../components/Navbar/StickyNav"
 
 const ContentArea = styled.div`
-  /* grid-column: 1 / 4;
-  @media (min-width: 1200px) {
-    grid-column: 2 / 4;
-  } */
-
   h1 {
     margin-top: 0;
     text-transform: capitalize;
     margin-bottom: 28px;
   }
-  /* p {
-    margin-bottom: 40px;
-  } */
 `
 const GridPost = styled.div`
   display: grid;
@@ -76,23 +73,61 @@ const Text = styled.p`
     color: #E9805D;
   }
 
+  p:first-child:first-letter {
+    font-size: 4em;
+    float: left;
+    margin-top: .25em;
+    margin-right: 0.5rem;
+    font-family: "Canela-Light";
+    color: var(--c-darkgreen);
+}
+`
+
+const BlockQuote = styled.blockquote`
+    color: var(--c-darkgreen);
+    max-width: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Canela-Light";
+
+  /* &:before {
+      content: '"';
+      font-size:120px;
+      font-family: "Avenir-Bold";
+      position:absolute;
+      text-align: center;
+      opacity: 0.2
+  } */
+
+  p {
+      font-size: 32px !important
+  }
 `
 
 const ImgContainer = styled.div`
   max-width: 1140%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-
+  margin-top: 32px;
+  margin-bottom: 32px;
+  
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 
   img {
     display: block;
     /* max-width: 100%; */
     width: 100%;
   }
-`
 
+  p {
+    color: var(--c-text);
+    font-size: 14px;
+  }
+`
 
 const Blog = ({ data }) => {
   const {
@@ -103,28 +138,35 @@ const Blog = ({ data }) => {
     richText: { json },
   } = data.post
 
-
   const options = {
     // renderMark: {
     //   [MARKS.BOLD]: text => <Bold>{text}</Bold>,
     // },
     renderNode: {
-      "embedded-asset-block": node => {
-        console.log(node)
-        // return (
-        //     {/* <img src={node.data.target.fields.file['en-US'].url} alt="Placeholder" /> */}
-        //   </div>
-        // )
-      },
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-      [BLOCKS.EMBEDDED_ASSET]: node => <ImgContainer><img src={`${node.data.target.fields.file["en-US"].url}`} alt={node.data.target.fields.title["en-US"]} /></ImgContainer>
+      [BLOCKS.QUOTE] : (node, children) => <BlockQuote>{children}</BlockQuote>,
+      [BLOCKS.EMBEDDED_ASSET]: node => {
+        // console.log(node)
+        return (
+          <ImgContainer>
+            <img src={`${node.data.target.fields.file["en-US"].url}`} alt={node.data.target.fields.title["en-US"]} />
+            <p>{node.data.target.fields.description["en-US"]}</p>
+          </ImgContainer>
+        )
+      }
     },
   }
+
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0,
+  })
+
 
   return (
     <Layout blogPost={true}>
       <SEO title={title} />
-      <FeaturedImage>
+      <FeaturedImage ref={ref}>
         <Image
           className="main-image"
           fluid={bannerImage.fluid}
@@ -143,6 +185,9 @@ const Blog = ({ data }) => {
           </ContentArea>
         </GridPost>
       </section>
+      <StickyNav inView={inView}>
+        <NavbarPost />
+      </StickyNav>
     </Layout>
   )
 }
@@ -178,15 +223,3 @@ export const query = graphql`
 `
 
 export default Blog
-
-
-// introduction
-// published(formatString: "MMMM Do YYYY")
-// images {
-//   fluid {
-//     ...GatsbyContentfulFluid
-//   }
-// }
-// richText {
-//   json
-// }

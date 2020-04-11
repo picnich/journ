@@ -1,18 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-// import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
 import GridHome from "../components/Grid/GridHome"
-// import PageIntro from "../components/PageIntro/PageIntro"
 import BlogCard from "../components/Blog/BlogCard"
 import SEO from "../components/SEO"
 
-// const Section = styled.section`
-//   grid-column: 1 / 4;
-//   margin-left: -20px;
-//   margin-right: -20px;
-// `
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -38,31 +31,6 @@ const FlexItem = styled.div`
   }
 `
 
-// const Pagination = styled.div`
-//   grid-column: 1 / 4;
-//   text-align: right;
-
-//   .btn {
-//     margin-right: 20px;
-
-//     &:hover {
-//       cursor: pointer;
-//     }
-
-//     &.btn-active {
-//       color: var(--primary);
-
-//       &:after {
-//         display: none;
-//       }
-//     }
-
-//     &:last-child {
-//       margin-right: 0;
-//     }
-//   }
-// `
-
 const BlogCategoryTemplate = props => {
   // const { category } = props.pageContext
 
@@ -70,19 +38,17 @@ const BlogCategoryTemplate = props => {
   return (
     <Layout>
       <SEO title="Blogs" />
-      {/* <section className="section-padding"> */}
         <GridHome>
-            <FlexContainer>
-              {data.post.edges.map(({ node }, i) => {
-                return (
-                  <FlexItem>
-                    <BlogCard key={i} blog={node} />
-                  </FlexItem>
-                )
-              })}
-            </FlexContainer>
-          </GridHome>
-      {/* </section> */}
+          <FlexContainer>
+            {data.post.edges.map(({ node }, i) => {
+              return (
+                <FlexItem key={i}>
+                  <BlogCard blog={node} />
+                </FlexItem>
+              )
+            })}
+          </FlexContainer>
+        </GridHome>
     </Layout>
   )
 }
@@ -115,12 +81,3 @@ export const query = graphql`
   }
 `
 export default BlogCategoryTemplate
-
-
-// postId: contentful_id
-// published(formatString: "MMMM Do, YYYY")
-// images {
-//   fluid {
-//     ...GatsbyContentfulFluid
-//   }
-// }

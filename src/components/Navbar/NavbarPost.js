@@ -4,7 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 // import styled from "styled-components"
 // import Image from "gatsby-image"
 import IconMenu from "../../images/navigation-menu.svg"
-import IconCart from "../../images/icon-cart.svg"
+// import IconCart from "../../images/icon-cart.svg"
+import IconJ from "../../images/JOURN-J.svg"
 
 import {
   NavBar, 
@@ -96,10 +97,11 @@ const NavbarPost = () => {
               })}
               <li className="link-shop">
                 <a href="https://ourjourn.com" rel="Link to Journ Shop" target="__blank">
-                  <IconCart />
+                  <IconJ />
                   Shop
                 </a>
-              </li>            </ul>
+              </li>            
+            </ul>
           </NavLinksPost>
         </NavCenter>
       </NavBar>

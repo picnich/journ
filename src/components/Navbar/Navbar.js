@@ -6,7 +6,11 @@ import { useStaticQuery, graphql } from "gatsby"
 // import quickNav from "../../constants/quickNav"
 // import styled from "styled-components"
 // import DarkMode from "../DarkMode/DarkMode"
-import IconCart from "../../images/icon-cart.svg"
+// import IconCart from "../../images/icon-cart.svg"
+import IconJ from "../../images/JOURN-J.svg"
+import NavbarPost from "./NavbarPost"
+import { useInView } from 'react-intersection-observer'
+
 import {
   NavBar, 
   // NavButton, 
@@ -14,7 +18,8 @@ import {
   // ThemeSwitch, 
   NavCenter, 
   NavLinks, 
-  // LogoContainer
+  Manifesto,
+  StickyNav
 } from "./styles"
 
 
@@ -25,6 +30,9 @@ const Navbar = () => {
   // const toggleNav = () => {
   //   setNav(isOpen => !isOpen)
   // }
+  const [ref, inView, entry] = useInView({
+    threshold: 0,
+  })
 
   const {
     site: { siteMetadata },
@@ -55,7 +63,7 @@ const Navbar = () => {
 
   return (
     <>
-      <NavBar>
+      <NavBar ref={ref}>
         <NavCenter>
           <NavLogo>
             <AniLink cover bg="var(--background)" to="/">
@@ -66,11 +74,11 @@ const Navbar = () => {
             </a>
           </NavLogo>
         </NavCenter>
-        {/* <NavCenter>
-          <NavButton type="button" onClick={toggleNav}>
-            Menu <IconMenu />
-          </NavButton>
-        </NavCenter> */}
+        <NavCenter>
+          <Manifesto>
+            Welcome to The Journal. A place where Journ will share our thoughts on the topics that matter to you most in an effort to simplify your everyday routine.
+          </Manifesto>
+        </NavCenter>
         <NavCenter>
           <NavLinks
             // className={
@@ -97,7 +105,7 @@ const Navbar = () => {
               })}
               <li className="link-shop">
                 <a href="https://ourjourn.com" rel="Link to Journ Shop" target="__blank">
-                  <IconCart />
+                  <IconJ />
                   Shop
                 </a>
               </li>
@@ -106,6 +114,9 @@ const Navbar = () => {
         </NavCenter>
       </NavBar>
       {/* <Spacer /> */}
+      <StickyNav inView={inView}>
+        <NavbarPost />
+      </StickyNav>
     </>
   )
 }

@@ -5,6 +5,32 @@ export const NavBar = styled.nav`
   padding: 0 20px;
   width: 100%;
 `
+export const Manifesto = styled.h4`
+  /* color: green; */
+  font-size: 16px;
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 64px;
+  line-height: 170%;
+  letter-spacing: .5px;
+  
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+`
+
+export const StickyNav = styled.div`
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: ${ props => props.inView ? "translateY(-120%)" : "translateY(0px)"}; 
+  transition: transform ${ props => props.inView ? "0.125s" : "0.2s"} ease-in-out;
+  z-index: 1;
+`
 
 export const NavButton = styled.button`
   position: relative;
@@ -48,7 +74,7 @@ export const NavLogo = styled.div`
   letter-spacing: -0.5px;
   padding: 7px 0;
   z-index: 2;
-  margin-bottom: ${ props => props.isBlogPost ? "0px" : "70px"};
+  margin-bottom: ${ props => props.isBlogPost ? "0px" : "32px"};
   margin-top: 16px;
   position: relative;
 
@@ -100,7 +126,7 @@ export const NavLogo = styled.div`
     top: 0;
     left: 50%;
     left: 0%;
-    transform: translate(5px,44px);
+    transform: translate(5px,24px);
 
     @media (min-width: 768px) {
       display: inline-block;
@@ -112,7 +138,11 @@ export const NavLogo = styled.div`
 
 
     img {
-      max-width: 80px;
+      max-width: 60px;
+      
+      @media (min-width: 768px) {
+        max-width: 80px;
+      }
     }
   }
 `
@@ -242,28 +272,46 @@ export const NavLinksPost = styled.div`
     &.active {
         font-weight: 900;
         color: var(--c-title);
+        position: relative;
+
+        &.active:after {
+          content: '';
+          height: 2px;
+          width: 100%;
+          background: black;
+          position: absolute;
+          left: 0;
+           bottom: -6px;
+        }
+
     }
+
 
     &:focus {
       color: var(--c-lightgrey);
     }
   }
-  li.link-shop a { 
-    display: flex; 
-    align-items: center;
-    margin-left: 8px;
-    color: var(--c-journpeach) !important;
-    font-weight: bold;
-      
-  }
+  li.link-shop {
+    background: var(--c-journpeach);
+    border-radius: 20px;
 
-  li.link-shop svg {
-      max-width: 24px;
-      margin-right:7px;
-  }
-  @media (hover: hover) {
-    a:hover {
+    a {
+      display: flex; 
+      align-items: center;
+      margin-left: 8px;
+      color: white;
+      font-weight: bold;
+      margin-right: 12px;
+      padding-top: 3px;
+      font-size: 14px;
+    }
+    &:hover {
       color: var(--c-lightgrey);
+    }
+
+    svg {
+      max-width: 24px;
+      margin-right: 6px;
     }
   }
 `
@@ -312,29 +360,45 @@ export const NavLinks = styled.div`
     &.active {
         font-weight: 900;
         color: var(--c-title);
+        position: relative;
+
+        &.active:after {
+          content: '';
+          height: 2px;
+          width: 100%;
+          background: black;
+          position: absolute;
+          left: 0;
+           bottom: -6px;
+        }
+
     }
 
     &:focus {
       color: var(--c-lightgrey);
     }
   }
-  li.link-shop a { 
+  li.link-shop {
+    background: var(--c-journpeach);
+    border-radius: 20px;
+
+    a {
       display: flex; 
       align-items: center;
       margin-left: 8px;
-      color: var(--c-journpeach) !important;
+      color: white;
       font-weight: bold;
-  }
-
-  li.link-shop svg {
-      max-width: 24px;
-      margin-right:7px;
-  }
-
-
-  @media (hover: hover) {
-    a:hover {
+      margin-right: 12px;
+      padding-top: 3px;
+      font-size: 14px;
+    }
+    &:hover {
       color: var(--c-lightgrey);
+    }
+
+    svg {
+      max-width: 24px;
+      margin-right: 6px;
     }
   }
 `

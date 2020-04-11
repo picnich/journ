@@ -52,15 +52,35 @@ const getHomePosts = graphql`
         }
       }
     }
+    featuredPost: contentfulFeaturedPost {
+      post {
+        title
+          slug
+          category {
+            slug
+            name
+          }
+          bannerImage {
+            fluid(maxWidth: 1800, quality: 100) {
+              ...GatsbyContentfulFluid
+            }
+          }
+          richText {
+            json
+          }
+      }
+    }
   }
 `
 const BlogListHome = () => {
-  const { posts } = useStaticQuery(getHomePosts)
-  const latestPost = posts.edges[0]
-  const allPosts = posts.edges.slice(1, posts.length)
+  const { posts, featuredPost } = useStaticQuery(getHomePosts)
+  // const latestPost = posts.edges[0]
+  // const allPosts = posts.edges.slice(1, posts.length)
+  const allPosts = posts.edges.filter(({node}) => node.slug != featuredPost.post.slug);
+  
   return (
     <>
-      <BlogFeaturedCard blog={latestPost.node} />
+      <BlogFeaturedCard blog={featuredPost.post} />
       <FlexContainer>
         {allPosts.map(({ node }) => {
           return (
