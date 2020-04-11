@@ -4,12 +4,12 @@ import NavbarPost from "./Navbar/NavbarPost"
 import Footer from "./Footer"
 import GlobalStyle from "./Styles/GlobalStyle"
 
-const categoryPathnames = [
-  "/",
-  "/reflect",
-  "/self-care",
-  "/contribute"
-]
+// const categoryPathnames = [
+//   "/",
+//   "/reflect",
+//   "/self-care",
+//   "/contribute"
+// ]
 const Layout = ({ children, blogPost, location }) => {
   // console.log(location.pathname);
   // const isBlogPost = categoryPathnames.filter( category => category === location.pathname)

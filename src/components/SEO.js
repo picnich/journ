@@ -46,6 +46,12 @@ const SEO = ({ title, description }) => {
       <meta name="twitter:title" content={siteTitle} />
       <meta name="twitter:description" content={siteDesc} />
       <meta name="twitter:image" content={`${siteUrl}${image}`} />
+
+      <script
+        async type="text/javascript"
+        src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=JNcZYk">
+      </script>
+
     </Helmet>
   )
 }
