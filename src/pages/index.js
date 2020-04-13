@@ -32,7 +32,7 @@ const Index = () => {
           </div>
         </GridHome>
       </Layout>
-      {/* { (localStorage.getItem("popup")) && !isCancelled && <Newsletter inView={inView} handleClick={() => setCancel(true)} />} */}
+      { (localStorage.getItem("popup")) && !isCancelled && <Newsletter inView={inView} handleClick={() => setCancel(true)} />}
     </>
   )
 }

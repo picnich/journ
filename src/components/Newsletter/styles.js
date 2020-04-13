@@ -92,5 +92,9 @@ export const Content = styled.div`
             -webkit-appearance: none;
             border: 0;
         }
+        button:disabled, button[disabled] {
+            background: #dcdcdc;
+            cursor: not-allowed !important;
+        }
     }
 `
