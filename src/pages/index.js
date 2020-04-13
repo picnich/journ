@@ -12,12 +12,17 @@ const Index = () => {
   })
   const [ isNewsOpen, setNews ] = useState(inView);
   const [ isCancelled, setCancel ] = useState(false);
+  const [key, setKey] = useState(undefined)
+ 
   // const [key, setKey] = useState(undefined)
   
   // useEffect(() => {
   //   localStorage.setItem('popup', true)
   // }, [])
-
+  useEffect(() => {
+    setKey(localStorage.getItem('popup'))
+  }, [])
+console.log(key)
   useEffect( () => {
     setNews(inView);
   }, [inView])
@@ -32,7 +37,7 @@ const Index = () => {
           </div>
         </GridHome>
       </Layout>
-      { (localStorage.getItem("popup")) && !isCancelled && <Newsletter inView={inView} handleClick={() => setCancel(true)} />}
+      { !key && !isCancelled && <Newsletter inView={inView} handleClick={() => setCancel(true)} />}
     </>
   )
 }

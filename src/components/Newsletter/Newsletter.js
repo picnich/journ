@@ -11,7 +11,7 @@ import Form from "./Form"
 const Newsletter = ({ inView, handleClick }) => {
     const handleClose = () => {
         // console.log(localStorage.getItem("popup"))
-        localStorage.setItem('popup', false);
+        localStorage.setItem('popup', true);
         handleClick();
     }
     return (
