@@ -216,17 +216,26 @@ export const NavLinksPost = styled.div`
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
-    width: 70%;
-    background: white;
+    width: 100%;
+    background: var(--c-darkgreen);
     z-index: 2;
     box-shadow: 5px 10px 20px rgba(0,0,0, 0.2);
+    text-align: center;
+    ul {
+      width: 100%;
 
-    li {
-      margin-bottom: 1rem;
-      
-      
-      a {
-        font-size: 1.2rem;
+      li {
+        margin-bottom: 1.25rem;
+        
+        
+        a {
+          font-size: 1.2rem;
+          color: white;
+
+          &.active::after {
+            background: white;
+          }
+        }
       }
     }
   }
@@ -294,6 +303,9 @@ export const NavLinksPost = styled.div`
   li.link-shop {
     background: var(--c-journpeach);
     border-radius: 20px;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
 
     a {
       display: flex; 

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { useStaticQuery, graphql } from "gatsby"
-// import styled from "styled-components"
+import styled from "styled-components"
 // import Image from "gatsby-image"
 import IconMenu from "../../images/navigation-menu.svg"
-// import IconCart from "../../images/icon-cart.svg"
+import IconClose from "../../images/icon-close-white.svg"
 import IconJ from "../../images/JOURN-J.svg"
+import IconFb from "../../images/icon-facebook.svg"
+import IconTw from "../../images/icon-twitter.svg"
+import IconIg from "../../images/icon-instagram.svg"
+import socials from "../../constants/socials"
 
 import {
   NavBar, 
@@ -16,6 +20,42 @@ import {
   NavLinksPost, 
 } from "./styles"
 
+const FooterMenu = styled.div`
+  /* padding-top: 40px;
+  padding-bottom: 40px; */
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  svg {
+    max-width: 24px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  li {
+    font-size: var(--menuItem);
+    padding-bottom: 10px;
+    align-self: flex-start;
+    margin-left: 2rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      padding-bottom: 5px;
+    }
+  }
+`
 
 const NavbarPost = () => {
   const [isOpen, setNav] = useState(false)
@@ -71,7 +111,7 @@ const NavbarPost = () => {
           </NavLogo>
           {/* <ThemeSwitch></ThemeSwitch> */}
           <NavButton type="button" onClick={toggleNav}>
-            <IconMenu />
+            { isOpen ? <IconClose /> : <IconMenu />}
           </NavButton>
           <NavLinksPost
             isBlogPost={true}
@@ -102,6 +142,31 @@ const NavbarPost = () => {
                 </a>
               </li>            
             </ul>
+            { isOpen && (
+              <FooterMenu>
+                <ul>
+                  {socials.map((item, index) => {
+                    return (
+                      <li key={index}>
+                        <a
+                          key={index}
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {
+                            item.title === "Facebook" ? <IconFb /> : 
+                            item.title === "Twitter" ? <IconTw /> :
+                            <IconIg />
+                          }
+                          {/* {item.title} */}
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </FooterMenu>
+            )}
           </NavLinksPost>
         </NavCenter>
       </NavBar>
