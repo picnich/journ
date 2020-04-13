@@ -225,16 +225,20 @@ export const NavLinksPost = styled.div`
       width: 100%;
 
       li {
-        margin-bottom: 1.25rem;
-        
+        margin-bottom: 32px;
         
         a {
-          font-size: 1.2rem;
+          font-size: 24px;
           color: white;
 
           &.active::after {
             background: white;
           }
+        }
+
+        &.link-shop a {
+          font-size: 16px;
+          padding: 8px;
         }
       }
     }
