@@ -96,7 +96,8 @@ const Form = () => {
 
     return (
         <form name="newsletterForm" data-netlify="true" action="/success/" onSubmit={handleSubmit}>
-            <input type="hidden" name="bot-field" />
+            {/* <input type="hidden" name="bot-field" /> */}
+            <input type="hidden" name="form-name" value="newsletterForm" />
             <input type="text" name="email" placeholder="Email Address" onChange={handleChange}/>
             <button disabled={emailLength === 0}><Arrow /></button>
         </form>
