@@ -90,6 +90,7 @@ const BlockQuote = styled.blockquote`
     margin-left: auto;
     margin-right: auto;
     font-family: "Canela-Light";
+    line-height: 1.35;
 
   /* &:before {
       content: '"';
