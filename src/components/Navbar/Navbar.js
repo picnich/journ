@@ -30,7 +30,7 @@ const Navbar = () => {
   // const toggleNav = () => {
   //   setNav(isOpen => !isOpen)
   // }
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     threshold: 0,
   })
 
@@ -97,7 +97,6 @@ const Navbar = () => {
                 return (
                   <li key={index}>
                     <AniLink cover bg="var(--background)" to={node.slug} activeClassName="active">
-
                       {node.name}
                     </AniLink>
                   </li>

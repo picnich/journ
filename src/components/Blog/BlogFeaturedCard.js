@@ -96,7 +96,7 @@ const BlogFeaturedCard = ({ blog }) => {
       className="btn"
       cover
       bg="var(--background)"
-      to={`/${category.slug}/${slug}`}
+      to={`${category.slug}/${slug}`}
     >
     <GridContainer>
         <HeroImage>

@@ -31,7 +31,7 @@ const CategoryContainer = styled.div`
 const Category = ({ category }) => {
     return (
         <CategoryContainer>
-            <AniLink cover bg="var(--background)" to={`/${category.slug}`}>
+            <AniLink cover bg="var(--background)" to={`${category.slug}`}>
                 {category.name}
             </AniLink>
         </CategoryContainer>

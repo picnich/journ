@@ -78,7 +78,7 @@ const BlogCard = ({ blog }) => {
         className="btn"
         cover
         bg="var(--background)"
-        to={`/${category.slug}/${slug}`}
+        to={`${category.slug}/${slug}`}
       >
         <ImgContainer>
           <Image className="banner-image" fluid={bannerImage.fluid} alt="Banner Image" />

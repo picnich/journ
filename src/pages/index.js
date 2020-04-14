@@ -7,10 +7,10 @@ import Newsletter from "../components/Newsletter/Newsletter"
 import { useInView } from 'react-intersection-observer'
 
 const Index = () => {
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     threshold: 0.5,
   })
-  const [ isNewsOpen, setNews ] = useState(inView);
+  // const [ isNewsOpen, setNews ] = useState(inView);
   const [ isCancelled, setCancel ] = useState(false);
   const [key, setKey] = useState(undefined)
  
@@ -22,10 +22,10 @@ const Index = () => {
   useEffect(() => {
     setKey(localStorage.getItem('popup'))
   }, [])
-console.log(key)
-  useEffect( () => {
-    setNews(inView);
-  }, [inView])
+// console.log(key)
+  // useEffect( () => {
+  //   setNews(inView);
+  // }, [inView])
 
   return (
     <>
