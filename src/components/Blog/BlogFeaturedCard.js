@@ -10,14 +10,16 @@ import TagNoLink from "../Category/TagNoLink"
 
 const GridContainer = styled.div`
   margin-top: 50px;
+  margin-bottom: 24px;
   display: grid;
   /* grid-gap: 30px; */
   grid-template-columns: 100%;
   padding-left: 20px;
   padding-right: 20px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 100px;
   }
 
   /* @media (min-width: 1200px) {

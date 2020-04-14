@@ -8,12 +8,12 @@ const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   /* padding: var(--paddingStd) var(--paddingBorder); */
-  padding-top: 24px;
-  padding-bottom: 48px;
+  /* padding-top: 24px; */
+  margin-bottom: 48px;
   
-  @media (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     padding-top: 100px;
-  }
+  } */
 `
 
 const FlexItem = styled.div`
