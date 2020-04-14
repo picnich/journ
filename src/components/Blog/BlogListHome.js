@@ -42,7 +42,7 @@ const getHomePosts = graphql`
             name
           }
           bannerImage {
-            fluid(maxWidth: 1800, quality: 100) {
+            fluid(maxWidth: 1000, quality: 100) {
               ...GatsbyContentfulFluid
             }
           }
@@ -76,7 +76,7 @@ const BlogListHome = () => {
   const { posts, featuredPost } = useStaticQuery(getHomePosts)
   // const latestPost = posts.edges[0]
   // const allPosts = posts.edges.slice(1, posts.length)
-  const allPosts = posts.edges.filter(({node}) => node.slug != featuredPost.post.slug);
+  const allPosts = posts.edges.filter(({node}) => node.slug !== featuredPost.post.slug);
   
   return (
     <>
