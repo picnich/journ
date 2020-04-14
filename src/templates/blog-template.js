@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 // import Grid from "../components/Grid/Grid"
@@ -131,6 +131,7 @@ const ImgContainer = styled.div`
 `
 
 const Blog = ({ data }) => {
+
   const {
     title,
     category, 
@@ -158,10 +159,13 @@ const Blog = ({ data }) => {
     },
   }
 
+  const [ isStickyOpen, setSticky ] = useState(false);
   const [ref, inView] = useInView({
-    /* Optional options */
     threshold: 0,
   })
+  useEffect(() => {
+    setSticky(inView)
+  }, [inView])
 
 
   return (
@@ -186,7 +190,7 @@ const Blog = ({ data }) => {
           </ContentArea>
         </GridPost>
       </section>
-      <StickyNav inView={inView}>
+      <StickyNav inView={isStickyOpen}>
         <NavbarPost />
       </StickyNav>
     </Layout>

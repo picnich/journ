@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { useStaticQuery, graphql } from "gatsby"
 // import Image from "gatsby-image"
@@ -30,9 +30,13 @@ const Navbar = () => {
   // const toggleNav = () => {
   //   setNav(isOpen => !isOpen)
   // }
+  const [ isStickyOpen, setSticky ] = useState(false);
   const [ref, inView] = useInView({
     threshold: 0,
   })
+  useEffect(() => {
+    setSticky(inView)
+  }, [inView])
 
   const {
     site: { siteMetadata },
@@ -113,7 +117,7 @@ const Navbar = () => {
         </NavCenter>
       </NavBar>
       {/* <Spacer /> */}
-      <StickyNav inView={inView}>
+      <StickyNav inView={isStickyOpen}>
         <NavbarPost />
       </StickyNav>
     </>
