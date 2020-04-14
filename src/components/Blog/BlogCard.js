@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Image from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
@@ -69,9 +69,12 @@ const options = {
   },
 }
 const BlogCard = ({ blog }) => {
+  const [ content, setContent ] = useState(undefined);
   const { slug, title, bannerImage, richText, category } = blog
-  
   const excerpt = richText.json.content[0]
+  useEffect(() => {
+    setContent(documentToReactComponents(excerpt, options));
+  }, [])
   return (
     <BlogItem>
       <AniLink
@@ -86,7 +89,7 @@ const BlogCard = ({ blog }) => {
         <BlogItemContent>
           <Category category={category} />
           <h2>{title}</h2>
-          <p>{documentToReactComponents(excerpt, options)}</p>
+          <p>{content}</p>
           {/* <button className="btn">Read Post</button> */}
         </BlogItemContent>
       </AniLink>

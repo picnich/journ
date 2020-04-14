@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Image from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
@@ -39,10 +39,6 @@ const HeroImage = styled.div`
 const BlogItemContent = styled.div`
   background-color: var(--c-lightrose);
   padding: 24px 28px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   @media (min-width: 768px) {
     padding: 58px 68px;
@@ -88,9 +84,12 @@ const options = {
   },
 }
 const BlogFeaturedCard = ({ blog }) => {
+  const [ content, setContent ] = useState(undefined);
   const { slug, title, bannerImage, richText, category } = blog
-  
   const excerpt = richText.json.content[0]
+  useEffect(() => {
+      setContent(documentToReactComponents(excerpt, options));
+  },[])
   return (
     <AniLink
       className="btn"
@@ -105,7 +104,7 @@ const BlogFeaturedCard = ({ blog }) => {
         <BlogItemContent>
           <Category category={category} />
           <h2>{title}</h2>
-          <p>{documentToReactComponents(excerpt, options)}</p>
+          <p>{content}</p>
           {/* <button className="btn">Read Post</button> */}
         </BlogItemContent>
     </GridContainer>
