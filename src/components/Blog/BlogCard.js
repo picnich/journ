@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 import Category from "../Category"
+import TagNoLink from "../Category/TagNoLink"
 
 const BlogItem = styled.article`
   width: 100%;
@@ -87,7 +88,8 @@ const BlogCard = ({ blog }) => {
           <Image className="banner-image" fluid={bannerImage.fluid} alt="Banner Image" />
         </ImgContainer>
         <BlogItemContent>
-          <Category category={category} />
+          {/* <Category category={category} /> */}
+          <TagNoLink category={category} />
           <h2>{title}</h2>
           <p>{content}</p>
           {/* <button className="btn">Read Post</button> */}

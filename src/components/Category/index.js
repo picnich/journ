@@ -10,17 +10,12 @@ const CategoryContainer = styled.div`
     margin-bottom: 28px;
     transition: var(--transition) all;
 
-    a {
+    > a {
         color: white;
         text-decoration: none;
         letter-spacing: 1px;
         font-size: 12px;
         font-family: 'Avenir-Bold', sans-serif;
-
-        :hover {
-            color: white;
-        }
-
         
     }
     :hover {

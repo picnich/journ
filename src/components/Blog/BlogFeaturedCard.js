@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 import Category from "../Category"
+import TagNoLink from "../Category/TagNoLink"
 
 
 const GridContainer = styled.div`
@@ -102,7 +103,8 @@ const BlogFeaturedCard = ({ blog }) => {
           <Image fluid={bannerImage.fluid} alt="Banner Image"  />
         </HeroImage>
         <BlogItemContent>
-          <Category category={category} />
+          {/* <Category category={category} /> */}
+          <TagNoLink category={category} />
           <h2>{title}</h2>
           <p>{content}</p>
           {/* <button className="btn">Read Post</button> */}
