@@ -152,7 +152,7 @@ const Blog = ({ data }) => {
         return (
           <ImgContainer>
             <img src={`${node.data.target.fields.file["en-US"].url}`} alt={node.data.target.fields.title["en-US"]} />
-            <p>{node.data.target.fields.description["en-US"]}</p>
+            { node.data.target.fields.description["en-US"] && <p>{node.data.target.fields.description["en-US"]}</p>}
           </ImgContainer>
         )
       }
