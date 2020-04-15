@@ -4,7 +4,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
-import Category from "../Category"
+// import Category from "../Category"
 import TagNoLink from "../Category/TagNoLink"
 
 const BlogItem = styled.article`

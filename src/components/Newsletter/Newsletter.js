@@ -8,12 +8,13 @@ import {
 
 import Form from "./Form"
 
-const Newsletter = ({ inView, handleClick }) => {
+const Newsletter = ({ inView , handleClick }) => {
     const handleClose = () => {
         // console.log(localStorage.getItem("popup"))
         localStorage.setItem('popup', true);
         handleClick();
     }
+
     return (
         <div style={{zIndex: 2, display: `${inView ? "block" : "none"}`}}>
             <Overlay />
