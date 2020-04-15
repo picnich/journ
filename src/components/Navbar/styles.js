@@ -75,7 +75,7 @@ export const NavLogo = styled.div`
   padding: 7px 0;
   z-index: 2;
   margin-bottom: ${ props => props.isBlogPost ? "0px" : "32px"};
-  margin-top: 16px;
+  /* margin-top: 16px; */
   position: relative;
 
   @media (min-width: 768px) {
