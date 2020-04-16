@@ -32,11 +32,9 @@ const Index = () => {
     <>
       <Layout>
         <SEO title="Home" />
-        {/* <section ref={ref}> */}
-          <GridHome>
-              <BlogListHome />
-          </GridHome>
-        {/* </section> */}
+        <GridHome>
+            <BlogListHome />
+        </GridHome>
       </Layout>
       { 
         !key && 

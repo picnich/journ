@@ -80,7 +80,7 @@ const Navbar = () => {
         </NavCenter>
         <NavCenter>
           <Manifesto>
-            Welcome to The Journal. A place where Journ will share our thoughts on the topics that matter to you most in an effort to simplify your everyday routine.
+            Welcome to The Routine. A place where Journ will share our thoughts on the topics that matter to you most in an effort to simplify your everyday routine.
           </Manifesto>
         </NavCenter>
         <NavCenter>
