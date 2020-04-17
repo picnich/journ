@@ -42,16 +42,28 @@ const HeroImage = styled.div`
 const BlogItemContent = styled.div`
   background-color: var(--c-lightrose);
   padding: 24px 28px;
+  margin-bottom: 0;
 
   @media (min-width: 768px) {
+    padding: 40px;
+  }
+  @media (min-width: 1024px) {
+    padding: 48px 52px;
+  }
+  @media (min-width: 1280px) {
     padding: 58px 68px;
-    margin-bottom: 0;
   }
 
   h2 {
     margin-top: 0;
     margin-bottom: 20px;
     @media screen and (min-width: 768px) {
+      font-size: 38px;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 44px;
+    }
+    @media screen and (min-width: 1280px) {
       font-size: 52px;
     }
   }

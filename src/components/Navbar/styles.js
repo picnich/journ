@@ -79,8 +79,16 @@ export const NavLogo = styled.div`
   position: relative;
 
   @media (min-width: 768px) {
-    font-size: ${props => props.isBlogPost ? "32px" : "100px"};
+    font-size: ${props => props.isBlogPost ? "24px" : "68px"};
     padding: 12px 0;
+  }
+  @media (min-width: 1024px) {
+    font-size: ${props => props.isBlogPost ? "28px" : "80px"};
+    /* padding: 12px 0; */
+  }
+  @media (min-width: 1280px) {
+    font-size: ${props => props.isBlogPost ? "32px" : "100px"};
+    /* padding: 12px 0; */
   }
   /* @media (min-width: 1200px) {
     font-size: 100px;
